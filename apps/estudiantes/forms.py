@@ -45,17 +45,12 @@ class jornadaForm(forms.ModelForm):
 		model = jornada 
 		fields = ['codigo_jornada','nombre']
 
-class asig_jornadaForm(forms.Form):
-	codigo_asignaturas=forms.CharField(label='asignatura',widget=forms.CharField(attrs={'class':'form-control','reqiered':True})),
-	codigo_jornada=forms.CharField(label='jornada',widget=forms.CharField(attrs={'class':'form-control','requiered':True})),
-	franja.codigo_hora=forms.ModelChoiceField(label='hora',queryset=franja.objects.all(),widget=forms.Select(attrs={'class':'form-control','requiered':True})),
-	franja.codigo_dias=forms.ModelChoiceField(label='dias',queryset=franja.objects.all(),widget=forms.Select(attrs={'class':'form-control','requiered':True})),
-	franja.codigo_franja=forms.ModelChoiceField(label='franja',queryset=franja.objects.all(),widget=forms.Select(attrs={'class':'form-control','requiered=':True})),,
-				 }
+class asig_jornadaForm(forms.ModelForm):
+	models = asig_jornada
+	fields = ['codigo_asignaturas','codigo_jornada','codigo_dias','codigo_hora','codigo_franja']
+
 class horarioForm(forms.ModelForm):
-	idhorario=forms.CharField(label='idhorario',widget=forms.CharField(attrs={'class':'form-control','reqiered':True})),
-	codigo_pa=forms.CharField(label='periodo_academico',widget=forms.CharField(attrs={'class':'form-control','reqiered':True})),
-	codigo_alumno=forms.CharField(label='alumno',widget=forms.CharField(attrs={'class':'form-control','reqiered':True})),
-	asig_jornada.codigo_asignaturas=forms.ModelChoiceField(label='codigo asignaturas',queryset=asig_jornada.objects.all(),widget=forms.Select(attrs={'class':'form-control','requiered':True})),
-	asig_jornada.codigo_jornada=forms.ModelChoiceField(label='codigo jornada',queryset=asig_jornada.objects.all(),widget=forms.Select(attrs={'class':'form-control','requiered':True})),
+	models = horario
+	fields = ['idhorario','codigo_pa','codigo_alumno','codigo_asignaturas','codigo_jornada']
+
 
