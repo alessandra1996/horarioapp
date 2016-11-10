@@ -1,0 +1,51 @@
+{% extends 'base/base2.html' %}
+
+{% block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>codigo</td>
+			<td>Nombre</td>
+			<td>creditos</td>
+			<td>numero de horas</td>
+			<td>codigo del tipo</td>
+			
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for asignaturas in object_list %}
+		<tr>
+			<td>{{ asignaturas.codigo_asignaturas }}</td>
+			<td>{{ asignaturas.nombre }}</td>
+			<td>{{ asignaturas.creditos }}</td>
+			<td>{{ asignaturas.numero_horas }}</td>
+			<td>{{ asignaturas.codigo_tipo }}</td>
+         
+			<td>
+				<a class="btn btn-primary" href="{% url 'asig_edit' asignaturas.pk %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'asig_delete' asignaturas.pk %}">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de asignaturas</h1>
+		{% endif %}
+	</tbody>
+</table> 
+<ul class="pager">
+	<li>
+		{% if page_obj.has_previous %}
+       	 <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+		{% endif %}
+        </li>
+	<li>
+		{% if page_obj.has_next %}
+     	 <a href="?page={{ page_obj.next_page_number }}">Next</a> 
+    	{% endif %}
+    </li>
+</ul>
+{% endblock%}

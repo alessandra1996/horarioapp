@@ -1,0 +1,127 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    
+    {% block extrastatic %}
+    {% endblock %}
+
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <title>{% block title %}Horario Estudiantes {% endblock %} </title>
+
+</head>
+<body>
+<div class="container">
+
+	{% block navbar %}
+		<div class="bs-docs-section clearfix">
+		    <div class="row">
+		        <div class="col-lg-12">
+		            <div class="bs-component">
+		            	<nav class="navbar navbar-default">
+		                	<div class="container-fluid">
+		                  		<div class="navbar-header">
+		                    		<a class="navbar-brand" href="{% url 'index' %}">Home</a>
+		                  		</div>
+		                  	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		                    	<ul class="nav navbar-nav">
+		                      		<li class="dropdown">
+		                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">alumnos <span class="caret"></span></a>
+				                        <ul class="dropdown-menu" role="menu">
+				                        	<li><a href="{% url 'estud_list' %}">listar</a></li>
+											<li><a href="{% url 'estud_crear' %}">crear</a></li>
+										</ul>
+		                      		</li>
+									<li class="dropdown">
+		                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Asignaturas <span class="caret"></span></a>
+				                        <ul class="dropdown-menu" role="menu">
+				                        	<li><a href="{% url 'asig_list' %}">listar</a></li>
+				                        	<li><a href="{% url 'asig_crear' %}">crear</a></li>
+										</ul>
+		                      		</li>
+									<li class="dropdown">
+		                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Periodo academico <span class="caret"></span></a>
+				                        <ul class="dropdown-menu" role="menu">
+				                        	<li><a href="{% url 'periodo_list' %}">listar</a></li>
+				                        	<li><a href="{% url 'periodo_crear' %}">crear</a></li>
+										</ul>
+		                      		</li> 
+									<li class="dropdown">
+		                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Dias  y horas<span class="caret"></span></a>
+				                        <ul class="dropdown-menu" role="menu">
+				                        	<li><a href="{% url 'dias_list' %}">listar dias</a></li>
+				                  			<li><a href="{% url 'dias_crear' %}">crear dias</a></li>
+						                	<li><a href="{% url 'hora_list'%}">listar horas</a></li>
+				                        	<li><a href="{% url 'hora_crear' %}">crear horas</a></li>
+										</ul>
+		                      		</li> 
+									<li class="dropdown">
+		                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">franja<span class="caret"></span></a>
+				                        <ul class="dropdown-menu" role="menu">
+				                        	<li><a href="{% url 'franja_list' %}">listar</a></li>
+											<li><a href="{% url 'franja_crear' %}">crear</a></li>
+										</ul>
+		                      		</li>
+									<li class="dropdown">
+		                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tipo <span class="caret"></span></a>
+				                        <ul class="dropdown-menu" role="menu">
+				                        	<li><a href="{% url 'tipo_list' %}">listar</a></li>
+											<li><a href="{% url 'tipo_crear' %}">crear</a></li>
+										</ul>
+		                      		</li>
+										<li class="dropdown">
+		                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jornada <span class="caret"></span></a>
+				                        <ul class="dropdown-menu" role="menu">
+				                        	<li><a href="{% url 'jornada_list' %}">listar</a></li>
+				                 			<li><a href="{% url 'jornada_crear' %}">crear</a></li>
+										 </ul>
+		                      		</li>
+									<li class="dropdown">
+		                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Asignaturas por jornada <span class="caret"></span></a>
+				                        <ul class="dropdown-menu" role="menu">
+				                        	<li><a href="{% url 'asigjornada_list' %}">listar</a></li>
+				               				<li><a href="{% url 'asigjornada_crear' %}">crear</a></li>
+										</ul>
+		                      		</li>
+									<li class="dropdown">
+		                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Horario <span class="caret"></span></a>
+				                        <ul class="dropdown-menu" role="menu">
+				                        	<li><a href="{% url 'horario_list' %}">listar</a></li>
+				                        	<li><a href="{% url 'horario_crear' %}">crear</a></li>
+										</ul>
+		                      		</li>
+
+
+
+
+		                      	
+		                    	</ul>
+		                    
+		                    </div>
+		                </div>
+		            </nav>
+		        </div>
+           	</div>
+        </div>
+    </div>    
+
+	{% endblock %}
+
+
+	{% block content %}
+	<h4>	Bloque de contenido		</h4>
+	{% endblock %}
+
+
+	{% block footer %}
+	{% endblock%}
+</div>
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+	{% block extrajs %}
+	{% endblock %}
+
+</boby>
+</html>
