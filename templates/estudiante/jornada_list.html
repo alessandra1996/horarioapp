@@ -6,7 +6,7 @@
 	<thead>
 		<tr>
 			<td>codigo</td>
-			<td>jornada</td>
+			<td>Jornada</td>
 		
 			
 			
@@ -15,22 +15,22 @@
 	</thead>
 	<tbody>
 		{% if object_list %}
-		{% for jornada in object_list %}
+		{% for Jornada in object_list %}
 		<tr>
-			<td>{{ jornada.codigo_jornada }}</td>
-			<td>{{ jornada.nombre }}</td>
+			<td>{{ Jornada.codigo_jornada }}</td>
+			<td>{{ Jornada.nombre }}</td>
 			
 	
          
 			<td>
-				<a class="btn btn-primary" href="{% url 'jornada_edit' jornada.pk %}">Editar</a>
-				<a class="btn btn-danger" href="{% url 'jornada_delete' jornada.pk %}">Eliminar</a>
+				<a class="btn btn-primary" href="{% url 'jornada_edit' Jornada.pk %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'jornada_delete' Jornada.pk %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}
 		
 		{% else %}
-		<h1>No hay registros de jornada</h1>
+		<h1>No hay registros de Jornada</h1>
 		{% endif %}
 	</tbody>
 </table> 

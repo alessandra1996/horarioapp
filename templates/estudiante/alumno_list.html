@@ -10,7 +10,7 @@
 			<td>apellido</td>
 			<td>Telefono</td>
 			<td>direccion</td>
-			<td>idalumno</td>
+			<td>idAlumno</td>
 			<td>dato creacion</td>
 			<td>Actualizacion</td>
 		</tr>
@@ -18,19 +18,19 @@
 	</thead>
 	<tbody>
 		{% if object_list %}
-		{% for alumno in object_list %}
+		{% for Alumno in object_list %}
 		<tr>
-			<td>{{ alumno.codigo_alumno }}</td>
-			<td>{{ alumno.nombre }}</td>
-			<td>{{ alumno.apellido }}</td>
-			<td>{{ alumno.telefono }}</td>
-			<td>{{ alumno.direccion }}</td>
-            <td>{{ alumno.id_alumno }}</td>
-            <td>{{ alumno.timestamp }}</td>
-            <td>{{ alumno.actualizado }}</td>
+			<td>{{ Alumno.codigo_alumno }}</td>
+			<td>{{ Alumno.nombre }}</td>
+			<td>{{ Alumno.apellido }}</td>
+			<td>{{ Alumno.telefono }}</td>
+			<td>{{ Alumno.direccion }}</td>
+            <td>{{ Alumno.id_alumno }}</td>
+            <td>{{ Alumno.timestamp }}</td>
+            <td>{{ Alumno.actualizado }}</td>
 			<td>
-				<a class="btn btn-primary" href="{% url 'estud_edit' alumno.pk %}">Editar</a>
-				<a class="btn btn-danger" href="{% url 'estud_delete' alumno.pk %}">Eliminar</a>
+				<a class="btn btn-primary" href="{% url 'estud_edit' Alumno.pk %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'estud_delete' Alumno.pk %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}

@@ -14,24 +14,19 @@
 		
 	</thead>
 	<tbody>
-		{% if object_list %}
 		{% for franja in object_list %}
 		<tr>
 			<td>{{ franja.codigo_franja }}</td>
-			<td>{{ franja.codigo_dias }}</td>
-			<td>{{ franja.codigo_hora }}</td>
+			<td>{{ franja.franjadiashora.codigo_dias }}</td>
+			<td>{{ franja.franjadiashora.codigo_hora }}</td>
 	
          
-			<td>
-				<a class="btn btn-primary" href="{% url 'franja_edit' franja.pk %}">Editar</a>
-				<a class="btn btn-danger" href="{% url 'franja_delete' franja.pk %}">Eliminar</a>
-			</td>
+			
 		</tr>
-		{% endfor %}
 		
-		{% else %}
-		<h1>No hay registros de franjas</h1>
-		{% endif %}
+		{% empty %}
+		<h1>No hay registros de Franjas</h1>
+		{% endfor %}
 	</tbody>
 </table> 
 <ul class="pager">

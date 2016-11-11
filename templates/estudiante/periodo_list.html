@@ -15,22 +15,22 @@
 	</thead>
 	<tbody>
 		{% if object_list %}
-		{% for periodo in object_list %}
+		{% for Periodo in object_list %}
 		<tr>
-			<td>{{ periodo.codigo_pa }}</td>
-			<td>{{ periodo.nombre }}</td>
+			<td>{{ Periodo.codigo_pa }}</td>
+			<td>{{ Periodo.nombre }}</td>
 			
 	
          
 			<td>
-				<a class="btn btn-primary" href="{% url 'periodo_edit' periodo.pk %}">Editar</a>
-				<a class="btn btn-danger" href="{% url 'periodo_delete' periodo.pk %}">Eliminar</a>
+				<a class="btn btn-primary" href="{% url 'periodo_edit' Periodo.pk %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'periodo_delete' Periodo.pk %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}
 		
 		{% else %}
-		<h1>No hay registros de periodo</h1>
+		<h1>No hay registros de Periodo</h1>
 		{% endif %}
 	</tbody>
 </table> 

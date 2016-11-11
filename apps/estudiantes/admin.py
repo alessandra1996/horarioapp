@@ -6,18 +6,18 @@ class Adminregistrado(admin.ModelAdmin):
     list_display =["codigo_alumno","nombre","apellido","telefono","timestamp","actualizado"]
    # form = registradoform
     class Meta:
-       model = alumno
+       model = Alumno
 class AdminMaterias(admin.ModelAdmin):
     list_display =["codigo_asignaturas","nombre","creditos","numero_horas","codigo_tipo"]
    # form = registradoform
     class Meta:
-       model = asignaturas
+       model = Asignaturas
 class AdminTipo(admin.ModelAdmin):
     list_display =["codigo_tipo","nombre"]
    # form = registradoform
     class Meta:
-       model = tipo
+       model = Tipo
 
-admin.site.register(alumno,Adminregistrado)        
-admin.site.register(asignaturas,AdminMaterias) 
-admin.site.register(tipo,AdminTipo) 
+admin.site.register(Alumno,Adminregistrado)        
+admin.site.register(Asignaturas,AdminMaterias) 
+admin.site.register(Tipo,AdminTipo) 

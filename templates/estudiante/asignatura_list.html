@@ -16,23 +16,23 @@
 	</thead>
 	<tbody>
 		{% if object_list %}
-		{% for asignaturas in object_list %}
+		{% for Asignaturas in object_list %}
 		<tr>
-			<td>{{ asignaturas.codigo_asignaturas }}</td>
-			<td>{{ asignaturas.nombre }}</td>
-			<td>{{ asignaturas.creditos }}</td>
-			<td>{{ asignaturas.numero_horas }}</td>
-			<td>{{ asignaturas.codigo_tipo }}</td>
+			<td>{{ Asignaturas.codigo_Asignaturas }}</td>
+			<td>{{ Asignaturas.nombre }}</td>
+			<td>{{ Asignaturas.creditos }}</td>
+			<td>{{ Asignaturas.numero_horas }}</td>
+			<td>{{ Asignaturas.codigo_tipo }}</td>
          
 			<td>
-				<a class="btn btn-primary" href="{% url 'asig_edit' asignaturas.pk %}">Editar</a>
-				<a class="btn btn-danger" href="{% url 'asig_delete' asignaturas.pk %}">Eliminar</a>
+				<a class="btn btn-primary" href="{% url 'asig_edit' Asignaturas.pk %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'asig_delete' Asignaturas.pk %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}
 		
 		{% else %}
-		<h1>No hay registros de asignaturas</h1>
+		<h1>No hay registros de Asignaturas</h1>
 		{% endif %}
 	</tbody>
 </table> 

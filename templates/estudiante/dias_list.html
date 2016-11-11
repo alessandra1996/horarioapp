@@ -13,20 +13,20 @@
 	</thead>
 	<tbody>
 		{% if object_list %}
-		{% for dias in object_list %}
+		{% for Dias in object_list %}
 		<tr>
-			<td>{{ dias.codigo_dias }}</td>
-			<td>{{ dias.dia }}</td>
+			<td>{{ Dias.codigo_dias }}</td>
+			<td>{{ Dias.dia }}</td>
 			
 			<td>
-				<a class="btn btn-primary" href="{% url 'dias_edit' dias.pk %}">Editar</a>
-				<a class="btn btn-danger" href="{% url 'dias_delete' dias.pk %}">Eliminar</a>
+				<a class="btn btn-primary" href="{% url 'dias_edit' Dias.pk %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'dias_delete' Dias.pk %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}
 		
 		{% else %}
-		<h1>No hay registros de dias</h1>
+		<h1>No hay registros de Dias</h1>
 		{% endif %}
 	</tbody>
 </table> 

@@ -14,15 +14,15 @@
 	</thead>
 	<tbody>
 		{% if object_list %}
-		{% for hora in object_list %}
+		{% for Hora in object_list %}
 		<tr>
-			<td>{{ hora.codigo_hora }}</td>
-			<td>{{ hora.hora }}</td>
+			<td>{{ Hora.codigo_hora }}</td>
+			<td>{{ Hora.hora }}</td>
 			
          
 			<td>
-				<a class="btn btn-primary" href="{% url 'hora_edit' hora.pk %}">Editar</a>
-				<a class="btn btn-danger" href="{% url 'hora_delete' hora.pk %}">Eliminar</a>
+				<a class="btn btn-primary" href="{% url 'hora_edit' Hora.pk %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'hora_delete' Hora.pk %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}

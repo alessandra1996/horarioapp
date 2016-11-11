@@ -16,24 +16,24 @@
 	</thead>
 	<tbody>
 		{% if object_list %}
-		{% for horario in object_list %}
+		{% for Horario in object_list %}
 		<tr>
-			<td>{{ horario.idhorario }}</td>
-			<td>{{ horario.codigo_pa }}</td>
-			<td>{{ horario.codigo_alumno }}</td>
-            <td>{{ horario.asig_jornada.codigo_asignaturas }}</td>
-			<td>{{ horario.asig_jornada.codigo_jornada }}</td>
+			<td>{{ Horario.idhorario }}</td>
+			<td>{{ Horario.codigo_pa }}</td>
+			<td>{{ Horario.codigo_alumno }}</td>
+            <td>{{ Horario.asig_jornada.codigo_asignaturas }}</td>
+			<td>{{ Horario.asig_jornada.codigo_jornada }}</td>
 
          
 			<td>
-				<a class="btn btn-primary" href="{% url 'horario_edit' horario.pk %}">Editar</a>
-				<a class="btn btn-danger" href="{% url 'horario_delete' horario.pk %}">Eliminar</a>
+				<a class="btn btn-primary" href="{% url 'horario_edit' Horario.pk %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'horario_delete' Horario.pk %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}
 		
 		{% else %}
-		<h1>No hay registros de horarios</h1>
+		<h1>No hay registros de Horarios</h1>
 		{% endif %}
 	</tbody>
 </table> 

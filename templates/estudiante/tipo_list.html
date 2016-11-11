@@ -5,8 +5,8 @@
 <table class="table table-bordered">
 	<thead>
 		<tr>
-			<td>tipo codigo</td>
-			<td>nombre</td>
+			<td>Tipo codigo</td>
+			<td>Nombre</td>
 			
 			
 			
@@ -15,22 +15,22 @@
 	</thead>
 	<tbody>
 		{% if object_list %}
-		{% for tipo in object_list %}
+		{% for Tipo in object_list %}
 		<tr>
-			<td>{{ tipo.codigo_tipo }}</td>
-			<td>{{tipo.nombre }}</td>
+			<td>{{ Tipo.codigo_tipo }}</td>
+			<td>{{Tipo.nombre }}</td>
 			
 	
          
 			<td>
-				<a class="btn btn-primary" href="{% url 'tipo_edit' tipo.pk %}">Editar</a>
-				<a class="btn btn-danger" href="{% url 'tipo_delete' tipo.pk %}">Eliminar</a>
+				<a class="btn btn-primary" href="{% url 'tipo_edit' Tipo.pk %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'tipo_delete' Tipo.pk %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}
 		
 		{% else %}
-		<h1>No hay registros de tipo</h1>
+		<h1>No hay registros de Tipo</h1>
 		{% endif %}
 	</tbody>
 </table> 
